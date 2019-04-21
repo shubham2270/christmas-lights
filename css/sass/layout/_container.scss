@@ -1,0 +1,22 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    font-family: sans-serif;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_wrapper {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background-color: rgb(37, 37, 37);
+}

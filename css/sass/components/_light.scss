@@ -1,0 +1,95 @@
+.lights_wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 400px;
+    height: 100%;
+}
+
+.lights {
+    width: 3em;
+    height: 3em;
+    border-radius: 25em;
+    background-color: #fff;
+}
+
+
+
+
+.red {
+    background-color: rgb(255, 193, 184);
+    transition: $speed;
+}
+
+.orange {
+    background-color: rgb(255, 204, 175);
+    transition: $speed;
+   
+}
+
+.yellow {
+    background-color: rgb(255, 237, 167);
+    transition: $speed;
+  
+}
+
+.green {
+    background-color: rgb(90, 124, 106);
+    transition: $speed;
+   
+}
+
+.blue {
+    background-color: rgb(126, 145, 165);
+    transition: $speed;
+  
+}
+
+.indigo {
+    background-color: rgb(80, 93, 151);
+    transition: $speed;
+}
+
+.purple {
+    background-color: rgb(117, 71, 110);
+    transition: $speed;
+}
+
+
+//High Intensity colors
+.red-h {
+    background-color: rgb(255, 30, 0);
+    box-shadow: red 0px 0px 30px;
+}
+
+.orange-h {
+    background-color: rgb(255, 94, 0);
+    box-shadow: orange 0px 0px 30px;
+}
+
+.yellow-h {
+    background-color: rgb(255, 255, 0);
+    box-shadow: yellow 0px 0px 30px;
+}
+
+.green-h {
+    background-color: #0A7E43;
+    box-shadow: #0A7E43 0px 0px 30px;
+}
+
+.blue-h {
+    background-color: rgb(0, 123, 255);
+    box-shadow: blue 0px 0px 30px;
+}
+
+.indigo-h {
+    background-color: rgb(0, 47, 255);
+    box-shadow: rgb(42, 69, 189) 0px 0px 30px;
+}
+
+.purple-h {
+    background-color: rgb(153, 15, 132);
+    box-shadow: rgb(163, 3, 163) 0px 0px 30px;
+}
+
