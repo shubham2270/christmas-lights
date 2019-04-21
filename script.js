@@ -16,7 +16,7 @@ const msg = document.getElementById('message');
  let toggle = false;
 
  //Controls the speed of light by adding or subtracting +/-50ms on clicking btn
- let lightSpeed = 200; //min 50 max 500
+ let lightSpeed = 100; //min 50 max 500
  //Adds the value of lightSpeed to every next variable then used in time interval
  const a = lightSpeed;
  const b = a + lightSpeed;
@@ -91,7 +91,7 @@ const msg = document.getElementById('message');
 
 //Sets the overall time of each round the light glows
 const flash = () => {
-    intervalId = setInterval(allLightUp, lightSpeed + f);
+    intervalId = setInterval(allLightUp, lightSpeed + g);
 }
 
 //Stops the interval on clicking stop button
@@ -122,7 +122,7 @@ const offLightsOnStop = () => {
 }
 
 
- //Displayes powering up message
+ //Display's powering up message
  const messageHide = () => {
      setTimeout(() => {
          msg.style.opacity = '0';

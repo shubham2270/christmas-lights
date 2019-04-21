@@ -85,44 +85,44 @@ button {
 
 .red {
   background-color: #ffc1b8;
-  -webkit-transition: 30ms ease-in-out;
-  transition: 30ms ease-in-out;
+  -webkit-transition: 50ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 .orange {
   background-color: #ffccaf;
-  -webkit-transition: 30ms ease-in-out;
-  transition: 30ms ease-in-out;
+  -webkit-transition: 50ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 .yellow {
   background-color: #ffeda7;
-  -webkit-transition: 30ms ease-in-out;
-  transition: 30ms ease-in-out;
+  -webkit-transition: 50ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 .green {
   background-color: #5a7c6a;
-  -webkit-transition: 30ms ease-in-out;
-  transition: 30ms ease-in-out;
+  -webkit-transition: 50ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 .blue {
   background-color: #7e91a5;
-  -webkit-transition: 30ms ease-in-out;
-  transition: 30ms ease-in-out;
+  -webkit-transition: 50ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 .indigo {
   background-color: #505d97;
-  -webkit-transition: 30ms ease-in-out;
-  transition: 30ms ease-in-out;
+  -webkit-transition: 50ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 .purple {
   background-color: #75476e;
-  -webkit-transition: 30ms ease-in-out;
-  transition: 30ms ease-in-out;
+  -webkit-transition: 50ms ease-in-out;
+  transition: 50ms ease-in-out;
 }
 
 .red-h {
