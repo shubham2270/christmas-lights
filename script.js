@@ -16,7 +16,7 @@ const msg = document.getElementById('message');
  let toggle = false;
 
  //Controls the speed of light by adding or subtracting +/-50ms on clicking btn
- let lightSpeed = 500; //min 50 max 500
+ let lightSpeed = 200; //min 50 max 500
  //Adds the value of lightSpeed to every next variable then used in time interval
  const a = lightSpeed;
  const b = a + lightSpeed;
