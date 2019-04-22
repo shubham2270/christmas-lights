@@ -7,7 +7,20 @@
 }
 
 button {
-    @include button
+    @include button;
+
+    &:hover {
+        background-color: rgb(172, 255, 146);
+    }
+}
+
+button:disabled {
+    background-color: grey;
+}
+
+#reset {
+    padding: 0.8em;
+    font-size: 1.2rem;
 }
 
 #message {

@@ -52,6 +52,19 @@ button {
   outline: none;
 }
 
+button:hover {
+  background-color: #acff92;
+}
+
+button:disabled {
+  background-color: grey;
+}
+
+#reset {
+  padding: 0.8em;
+  font-size: 1.2rem;
+}
+
 #message {
   color: white;
   text-align: center;

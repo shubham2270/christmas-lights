@@ -1,4 +1,4 @@
-//  const lights = document.querySelectorAll('.lights');
+//const lights = document.querySelectorAll('.lights');
 const red = document.getElementsByClassName('red')[0];
 const orange = document.getElementsByClassName('orange')[0];
 const yellow = document.getElementsByClassName('yellow')[0];
@@ -11,86 +11,125 @@ const button = document.getElementById('toggle');
 const inc = document.getElementById('increase');
 const dec = document.getElementById('decrease');
 const msg = document.getElementById('message');
+const reset = document.getElementById('reset');
 
- let intervalId;
- let toggle = false;
+let intervalId;
+let toggle = false;
 
- //Controls the speed of light by adding or subtracting +/-50ms on clicking btn
- let lightSpeed = 100; //min 50 max 500
- //Adds the value of lightSpeed to every next variable then used in time interval
- const a = lightSpeed;
- const b = a + lightSpeed;
- const c = a + b;
- const d = a + c;
- const e = a + d;
- const f = a + e;
- const g = a + f;
+//Controls the speed of light by adding or subtracting +/-50ms on clicking btn
+let lightSpeed = 250; //min 50 max 500
+//Adds the value of lightSpeed to every next variable then used in time interval
+let a = lightSpeed;
+let b = a + lightSpeed;
+let c = a + b;
+let d = a + c;
+let e = a + d;
+let f = a + e;
+let g = a + f;
 
- console.log(g)
+//Click the negative sign button to IncreaseDuration or Decrease speed
+const incrementDuration = () => {
 
- const incrementDuration = () => {
+    if(lightSpeed === 400) {
+        inc.setAttribute('disabled', 'true')
+    }
+    msg.style.opacity = '1';
+    messageHide();
+    msg.innerHTML = `Duration: ${lightSpeed}ms`
+    dec.removeAttribute('disabled')
+
     lightSpeed += 50
-    console.log(lightSpeed)
- }
- const decreaseDuration = () => {
+
+     a = lightSpeed;
+     b = a + lightSpeed;
+     c = a + b;
+     d = a + c;
+     e = a + d;
+     f = a + e;
+     g = a + f;
+
+     stopFlash()
+     flash(g);
+
+}
+
+//Click the Positive sign button to decreaseDuration or Increase speed
+const decreaseDuration = () => {
+
+    if(lightSpeed === 100) {
+        dec.setAttribute('disabled', 'true')
+    }
+    msg.style.opacity = '1';
+    messageHide();
+    msg.innerHTML = `Duration: ${lightSpeed}ms`
+    inc.removeAttribute('disabled')
+
     lightSpeed -= 50
-    console.log(lightSpeed)
-    console.log('g', g)
- }
+     a = lightSpeed;
+     b = a + lightSpeed;
+     c = a + b;
+     d = a + c;
+     e = a + d;
+     f = a + e;
+     g = a + f;
+
+    stopFlash()
+    flash(g);
+}
+
 
 // removes high intensity class and add it back on specified time duration
- const lightUpRed = () => {
+const lightUpRed = (a) => {
     red.classList.remove('red-h')
     setTimeout(() => {
         red.classList.add('red-h')
-    }, a); 
-    console.log(a)                 
- }
+    }, a);
+}
 
- const lightUpOrange = () => {
+const lightUpOrange = (b) => {
     orange.classList.remove('orange-h')
     setTimeout(() => {
         orange.classList.add('orange-h')
-    }, b); 
- }
+    }, b);
+}
 
- const lightUpYellow = () => {
+const lightUpYellow = (c) => {
     yellow.classList.remove('yellow-h')
     setTimeout(() => {
         yellow.classList.add('yellow-h')
     }, c);
- }
+}
 
- const lightUpGreen = () => {
+const lightUpGreen = (d) => {
     green.classList.remove('green-h')
     setTimeout(() => {
         green.classList.add('green-h')
-    }, d); 
- }
+    }, d);
+}
 
- const lightUpBlue = () => {
+const lightUpBlue = (e) => {
     blue.classList.remove('blue-h')
     setTimeout(() => {
         blue.classList.add('blue-h')
     }, e);
- }
+}
 
- const lightUpIndigo = () => {
+const lightUpIndigo = (f) => {
     indigo.classList.remove('indigo-h')
     setTimeout(() => {
         indigo.classList.add('indigo-h')
     }, f);
- }
+}
 
- const lightUpPurple = () => {
+const lightUpPurple = (g) => {
     purple.classList.remove('purple-h')
     setTimeout(() => {
         purple.classList.add('purple-h')
     }, g);
- }
+}
 
 //Sets the overall time of each round the light glows
-const flash = () => {
+const flash = (g) => {
     intervalId = setInterval(allLightUp, lightSpeed + g);
 }
 
@@ -101,14 +140,14 @@ const stopFlash = () => {
 
 
 //Calls all the light colors on clicking start
- const allLightUp = () => {
-     lightUpRed();
-     lightUpOrange();
-     lightUpYellow();
-     lightUpGreen();
-     lightUpBlue();
-     lightUpIndigo();
-     lightUpPurple();
+const allLightUp = () => {
+    lightUpRed(a);
+    lightUpOrange(b);
+    lightUpYellow(c);
+    lightUpGreen(d);
+    lightUpBlue(e);
+    lightUpIndigo(f);
+    lightUpPurple(g);
 }
 
 const offLightsOnStop = () => {
@@ -122,33 +161,43 @@ const offLightsOnStop = () => {
 }
 
 
- //Display's powering up message
- const messageHide = () => {
-     setTimeout(() => {
-         msg.style.opacity = '0';
-     },2000)
- }
+//Display's powering up message
+const messageHide = () => {
+    setTimeout(() => {
+        msg.style.opacity = '0';
+    }, 2000)
+}
 
- //Handles what happen when start or stop is clicked
- const lightManager = () => {
-     if (toggle) {
-         stopFlash()
-         toggle = !toggle;
-         button.innerHTML = 'START';
-         button.style.background = '#fff'
-         offLightsOnStop();
-     } else {
-         flash()
-         toggle = !toggle;
-         button.innerHTML = 'STOP'
-         button.style.background = '#ffdcdc'
-         msg.style.opacity = '1';
-         messageHide();
-     }
- }
+//Handles what happen when start or stop is clicked
+const lightManager = () => {
+    if (toggle) { //On clicking stop this rule works
+        stopFlash()
+        toggle = !toggle;
+        button.innerHTML = 'START';
+        button.style.background = '#fff'
+        offLightsOnStop();
+        dec.setAttribute('disabled', 'true');
+        inc.setAttribute('disabled', 'true');
+     
+    } else {    //On clicking start this rule works
+        flash(g)
+        toggle = !toggle;
+        button.innerHTML = 'STOP'
+        button.style.background = '#ffdcdc'
+        msg.style.opacity = '1';
+        messageHide();
+        dec.removeAttribute('disabled')
+        inc.removeAttribute('disabled')
+        
+    }
+}
+
+//Reloads the browser
+reset.addEventListener('click', () => {
+    location.reload();
+})
 
 
-
- button.addEventListener('click', lightManager);
- inc.addEventListener('click', incrementDuration);
- dec.addEventListener('click', decreaseDuration);
+button.addEventListener('click', lightManager);
+inc.addEventListener('click', incrementDuration);
+dec.addEventListener('click', decreaseDuration);
