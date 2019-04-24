@@ -1,11 +1,77 @@
 //const lights = document.querySelectorAll('.lights');
-const red = document.getElementsByClassName('red')[0];
-const orange = document.getElementsByClassName('orange')[0];
-const yellow = document.getElementsByClassName('yellow')[0];
-const green = document.getElementsByClassName('green')[0];
-const blue = document.getElementsByClassName('blue')[0];
-const indigo = document.getElementsByClassName('indigo')[0];
-const purple = document.getElementsByClassName('purple')[0];
+const red = document.getElementsByClassName('red');
+const orange = document.getElementsByClassName('orange');
+const yellow = document.getElementsByClassName('yellow');
+const green = document.getElementsByClassName('green');
+const blue = document.getElementsByClassName('blue');
+const indigo = document.getElementsByClassName('indigo');
+const purple = document.getElementsByClassName('purple');
+
+let intervals = []
+const allLightUp = () => {
+ // removes high intensity class and add it back on specified time duration
+   Object.entries(red).forEach(el => {
+        el[1].classList.remove('red-h')
+       let i = setTimeout(() => {
+            el[1].classList.add('red-h')
+        }, a);
+        intervals.push(i)
+    })
+
+    Object.entries(orange).forEach(el => {
+        el[1].classList.remove('orange-h')
+        let i = setTimeout(() => {
+            el[1].classList.add('orange-h')
+        }, b);
+        intervals.push(i)
+    })
+
+    Object.entries(yellow).forEach(el => {
+        el[1].classList.remove('yellow-h')
+        let i = setTimeout(() => {
+            el[1].classList.add('yellow-h')
+        }, c);
+        intervals.push(i)
+    })
+
+    Object.entries(green).forEach(el => {
+        el[1].classList.remove('green-h')
+        let i = setTimeout(() => {
+            el[1].classList.add('green-h')
+        }, d);
+        intervals.push(i)
+    })
+
+    Object.entries(blue).forEach(el => {
+        el[1].classList.remove('blue-h')
+      let i = setTimeout(() => {
+            el[1].classList.add('blue-h')
+        }, e);
+        intervals.push(i)
+    })
+
+    Object.entries(indigo).forEach(el => {
+        el[1].classList.remove('indigo-h')
+        let i =  setTimeout(() => {
+            el[1].classList.add('indigo-h')
+        }, f);
+        intervals.push(i)
+    })
+
+    Object.entries(purple).forEach(el => {
+        el[1].classList.remove('purple-h')
+        let i = setTimeout(() => {
+            el[1].classList.add('purple-h')
+        }, g);
+        intervals.push(i)
+    })
+    console.log(intervals.length) 
+    // if(intervals.length === 28) {
+    //     intervals = [];
+    // }
+}
+
+
 
 const button = document.getElementById('toggle');
 const inc = document.getElementById('increase');
@@ -29,7 +95,6 @@ let g = a + f;
 
 //Click the negative sign button to IncreaseDuration or Decrease speed
 const incrementDuration = () => {
-
     if(lightSpeed === 400) {
         inc.setAttribute('disabled', 'true')
     }
@@ -47,15 +112,12 @@ const incrementDuration = () => {
      e = a + d;
      f = a + e;
      g = a + f;
-
      stopFlash()
      flash(g);
-
 }
 
 //Click the Positive sign button to decreaseDuration or Increase speed
 const decreaseDuration = () => {
-
     if(lightSpeed === 100) {
         dec.setAttribute('disabled', 'true')
     }
@@ -72,61 +134,10 @@ const decreaseDuration = () => {
      e = a + d;
      f = a + e;
      g = a + f;
-
     stopFlash()
     flash(g);
 }
 
-
-// removes high intensity class and add it back on specified time duration
-const lightUpRed = (a) => {
-    red.classList.remove('red-h')
-    setTimeout(() => {
-        red.classList.add('red-h')
-    }, a);
-}
-
-const lightUpOrange = (b) => {
-    orange.classList.remove('orange-h')
-    setTimeout(() => {
-        orange.classList.add('orange-h')
-    }, b);
-}
-
-const lightUpYellow = (c) => {
-    yellow.classList.remove('yellow-h')
-    setTimeout(() => {
-        yellow.classList.add('yellow-h')
-    }, c);
-}
-
-const lightUpGreen = (d) => {
-    green.classList.remove('green-h')
-    setTimeout(() => {
-        green.classList.add('green-h')
-    }, d);
-}
-
-const lightUpBlue = (e) => {
-    blue.classList.remove('blue-h')
-    setTimeout(() => {
-        blue.classList.add('blue-h')
-    }, e);
-}
-
-const lightUpIndigo = (f) => {
-    indigo.classList.remove('indigo-h')
-    setTimeout(() => {
-        indigo.classList.add('indigo-h')
-    }, f);
-}
-
-const lightUpPurple = (g) => {
-    purple.classList.remove('purple-h')
-    setTimeout(() => {
-        purple.classList.add('purple-h')
-    }, g);
-}
 
 //Sets the overall time of each round the light glows
 const flash = (g) => {
@@ -138,27 +149,42 @@ const stopFlash = () => {
     clearInterval(intervalId)
 }
 
-
-//Calls all the light colors on clicking start
-const allLightUp = () => {
-    lightUpRed(a);
-    lightUpOrange(b);
-    lightUpYellow(c);
-    lightUpGreen(d);
-    lightUpBlue(e);
-    lightUpIndigo(f);
-    lightUpPurple(g);
-}
-
 const offLightsOnStop = () => {
-    red.classList.remove('red-h');
-    orange.classList.remove('orange-h');
-    yellow.classList.remove('yellow-h');
-    green.classList.remove('green-h');
-    blue.classList.remove('blue-h');
-    indigo.classList.remove('indigo-h');
-    purple.classList.remove('purple-h');
+    //clears the intervals for each light
+    intervals.forEach(el => clearInterval(el));
+    intervals = []; //empty the array
+   
+    //Removes the already added class
+    Object.entries(red).forEach(el => {
+        el[1].classList.remove('red-h')
+    })
+
+    Object.entries(orange).forEach(el => {
+        el[1].classList.remove('orange-h')
+    })
+
+    Object.entries(yellow).forEach(el => {
+        el[1].classList.remove('yellow-h')
+    })
+
+    Object.entries(green).forEach(el => {
+        el[1].classList.remove('green-h')
+    })
+
+    Object.entries(blue).forEach(el => {
+        el[1].classList.remove('blue-h')
+    })
+
+    Object.entries(indigo).forEach(el => {
+        el[1].classList.remove('indigo-h')
+    })
+
+    Object.entries(purple).forEach(el => {
+        el[1].classList.remove('purple-h')
+    })
 }
+
+
 
 
 //Display's powering up message

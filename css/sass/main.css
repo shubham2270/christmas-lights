@@ -25,6 +25,12 @@ html, body {
   background-color: #252525;
 }
 
+.main_lights_wrapper {
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 0.5em;
+}
+
 .btn_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
