@@ -40,8 +40,8 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0rem 2rem;
-  margin-top: 3rem;
+  padding: 0em 2em;
+  margin-top: 1.2em;
 }
 
 button {
@@ -69,6 +69,13 @@ button:disabled {
 #reset {
   padding: 0.8em;
   font-size: 1.2rem;
+  margin-top: 1em;
+}
+
+.row-btn {
+  padding: 1.5em;
+  font-size: 0.9rem;
+  margin-top: 1em;
 }
 
 #message {

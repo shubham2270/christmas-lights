@@ -7,77 +7,41 @@ const blue = document.getElementsByClassName('blue');
 const indigo = document.getElementsByClassName('indigo');
 const purple = document.getElementsByClassName('purple');
 
-let intervals = []
-const allLightUp = () => {
- // removes high intensity class and add it back on specified time duration
-   Object.entries(red).forEach(el => {
-        el[1].classList.remove('red-h')
-       let i = setTimeout(() => {
-            el[1].classList.add('red-h')
-        }, a);
-        intervals.push(i)
-    })
-
-    Object.entries(orange).forEach(el => {
-        el[1].classList.remove('orange-h')
-        let i = setTimeout(() => {
-            el[1].classList.add('orange-h')
-        }, b);
-        intervals.push(i)
-    })
-
-    Object.entries(yellow).forEach(el => {
-        el[1].classList.remove('yellow-h')
-        let i = setTimeout(() => {
-            el[1].classList.add('yellow-h')
-        }, c);
-        intervals.push(i)
-    })
-
-    Object.entries(green).forEach(el => {
-        el[1].classList.remove('green-h')
-        let i = setTimeout(() => {
-            el[1].classList.add('green-h')
-        }, d);
-        intervals.push(i)
-    })
-
-    Object.entries(blue).forEach(el => {
-        el[1].classList.remove('blue-h')
-      let i = setTimeout(() => {
-            el[1].classList.add('blue-h')
-        }, e);
-        intervals.push(i)
-    })
-
-    Object.entries(indigo).forEach(el => {
-        el[1].classList.remove('indigo-h')
-        let i =  setTimeout(() => {
-            el[1].classList.add('indigo-h')
-        }, f);
-        intervals.push(i)
-    })
-
-    Object.entries(purple).forEach(el => {
-        el[1].classList.remove('purple-h')
-        let i = setTimeout(() => {
-            el[1].classList.add('purple-h')
-        }, g);
-        intervals.push(i)
-    })
-    console.log(intervals.length) 
-    // if(intervals.length === 28) {
-    //     intervals = [];
-    // }
-}
-
-
 
 const button = document.getElementById('toggle');
 const inc = document.getElementById('increase');
 const dec = document.getElementById('decrease');
 const msg = document.getElementById('message');
 const reset = document.getElementById('reset');
+const addLight = document.getElementById('addLight');
+const removeLight = document.getElementById('removeLight');
+const mainLightWrapper = document.getElementsByClassName('main_lights_wrapper')[0];
+
+console.log(mainLightWrapper);
+
+//Add row of lights
+const addRow = () => {
+    const div = document.createElement('div');
+    div.className = 'lights_wrapper';
+    div.innerHTML = `
+    <div class="lights red"></div>
+    <div class="lights orange"></div>
+    <div class="lights yellow"></div>
+    <div class="lights green"></div>
+    <div class="lights blue"></div>
+    <div class="lights indigo"></div>
+    <div class="lights purple"></div>`
+
+    mainLightWrapper.appendChild(div)
+    
+}
+
+const removeRow = (input) => {
+    if(node.parentNode) {
+        node.parentNode.removeChild(node)
+    }
+    // mainLightWrapper.removeChild(input.parentNode.parentNode)
+}
 
 let intervalId;
 let toggle = false;
@@ -148,6 +112,73 @@ const flash = (g) => {
 const stopFlash = () => {
     clearInterval(intervalId)
 }
+
+
+
+let intervals = []
+const allLightUp = () => {
+ // removes high intensity class and add it back on specified time duration
+   Object.entries(red).forEach(el => {
+        el[1].classList.remove('red-h')
+       let i = setTimeout(() => {
+            el[1].classList.add('red-h')
+        }, a);
+        intervals.push(i)
+    })
+
+    Object.entries(orange).forEach(el => {
+        el[1].classList.remove('orange-h')
+        let i = setTimeout(() => {
+            el[1].classList.add('orange-h')
+        }, b);
+        intervals.push(i)
+    })
+
+    Object.entries(yellow).forEach(el => {
+        el[1].classList.remove('yellow-h')
+        let i = setTimeout(() => {
+            el[1].classList.add('yellow-h')
+        }, c);
+        intervals.push(i)
+    })
+
+    Object.entries(green).forEach(el => {
+        el[1].classList.remove('green-h')
+        let i = setTimeout(() => {
+            el[1].classList.add('green-h')
+        }, d);
+        intervals.push(i)
+    })
+
+    Object.entries(blue).forEach(el => {
+        el[1].classList.remove('blue-h')
+      let i = setTimeout(() => {
+            el[1].classList.add('blue-h')
+        }, e);
+        intervals.push(i)
+    })
+
+    Object.entries(indigo).forEach(el => {
+        el[1].classList.remove('indigo-h')
+        let i =  setTimeout(() => {
+            el[1].classList.add('indigo-h')
+        }, f);
+        intervals.push(i)
+    })
+
+    Object.entries(purple).forEach(el => {
+        el[1].classList.remove('purple-h')
+        let i = setTimeout(() => {
+            el[1].classList.add('purple-h')
+        }, g);
+        intervals.push(i)
+    })
+    console.log(intervals.length) 
+    // if(intervals.length === 28) {
+    //     intervals = [];
+    // }
+}
+
 
 const offLightsOnStop = () => {
     //clears the intervals for each light
@@ -227,3 +258,5 @@ reset.addEventListener('click', () => {
 button.addEventListener('click', lightManager);
 inc.addEventListener('click', incrementDuration);
 dec.addEventListener('click', decreaseDuration);
+addLight.addEventListener('click', addRow);
+removeLight.addEventListener('click', removeRow);

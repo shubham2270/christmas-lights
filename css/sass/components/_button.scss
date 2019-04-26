@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0rem 2rem;
-    margin-top: 3rem;
+    padding: 0em 2em;
+    margin-top: 1.2em;
 }
 
 button {
@@ -21,6 +21,13 @@ button:disabled {
 #reset {
     padding: 0.8em;
     font-size: 1.2rem;
+    margin-top: 1em;
+}
+
+.row-btn {
+    padding: 1.5em;
+    font-size: 0.9rem;
+    margin-top: 1em;
 }
 
 #message {
@@ -30,5 +37,5 @@ button:disabled {
     transition: 500ms;
     color: rgb(0, 140, 255);
     opacity: 0;
-
 }
+
