@@ -17,13 +17,14 @@ const addLight = document.getElementById('addLight');
 const removeLight = document.getElementById('removeLight');
 const mainLightWrapper = document.getElementsByClassName('main_lights_wrapper')[0];
 
-console.log(mainLightWrapper);
+const lightLength = mainLightWrapper.length;
+console.log(mainLightWrapper.length)
 
 //Add row of lights
 const addRow = () => {
-    const div = document.createElement('div');
-    div.className = 'lights_wrapper';
-    div.innerHTML = `
+    const lightWrapper = document.createElement('div');
+    lightWrapper.className = 'lights_wrapper';
+    lightWrapper.innerHTML = `
     <div class="lights red"></div>
     <div class="lights orange"></div>
     <div class="lights yellow"></div>
@@ -32,15 +33,14 @@ const addRow = () => {
     <div class="lights indigo"></div>
     <div class="lights purple"></div>`
 
-    mainLightWrapper.appendChild(div)
-    
+    mainLightWrapper.appendChild(lightWrapper)
+// console.log(mainLightWrapper) 
 }
 
-const removeRow = (input) => {
-    if(node.parentNode) {
-        node.parentNode.removeChild(node)
-    }
-    // mainLightWrapper.removeChild(input.parentNode.parentNode)
+const removeRow = () => {
+   const child = mainLightWrapper.getElementsByClassName('lights_wrapper')[0];
+   mainLightWrapper.removeChild(child)
+
 }
 
 let intervalId;
