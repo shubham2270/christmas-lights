@@ -20,12 +20,12 @@ html, body {
     height: 100%;
     padding: 2rem;
     background-color: rgb(37, 37, 37);
-    
 }
 
 .main_lights_wrapper {
     display: grid;
     grid-row-gap: 0.5em;
+    align-content: center;
     background-color: rgb(27, 23, 23);
     padding: 0.5em;
     border-radius: 8px;

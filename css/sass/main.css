@@ -29,6 +29,8 @@ html, body {
   display: -ms-grid;
   display: grid;
   grid-row-gap: 0.5em;
+  -ms-flex-line-pack: center;
+      align-content: center;
   background-color: #1b1717;
   padding: 0.5em;
   border-radius: 8px;
