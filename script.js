@@ -17,10 +17,23 @@ const addLight = document.getElementById('addLight');
 const removeLight = document.getElementById('removeLight');
 const mainLightWrapper = document.getElementsByClassName('main_lights_wrapper')[0];
 
-const lightLength = mainLightWrapper.length;
-console.log(mainLightWrapper.length)
+let lightRowCount = 1;
+//Checks if add/remove button should be disabled based on lightRowCount value
+const addAndRemoveButtonHandler = () => {
+    if(lightRowCount === 7) {
+        addLight.setAttribute('disabled', 'true');
+    } else if(lightRowCount < 7) {
+        addLight.removeAttribute('disabled');
+    }
 
-//Add row of lights
+    if(lightRowCount === 1) {
+        removeLight.setAttribute('disabled', 'true');
+    } else if (lightRowCount > 1) {
+        removeLight.removeAttribute('disabled');
+    }
+}
+
+//Add one row of light on clicking addLight button
 const addRow = () => {
     const lightWrapper = document.createElement('div');
     lightWrapper.className = 'lights_wrapper';
@@ -32,19 +45,23 @@ const addRow = () => {
     <div class="lights blue"></div>
     <div class="lights indigo"></div>
     <div class="lights purple"></div>`
-
     mainLightWrapper.appendChild(lightWrapper)
-// console.log(mainLightWrapper) 
+
+    lightRowCount += 1
+    console.log(lightRowCount);
+    addAndRemoveButtonHandler()
 }
 
+//Removes one row of light on clicking removeLight button 
 const removeRow = () => {
    const child = mainLightWrapper.getElementsByClassName('lights_wrapper')[0];
    mainLightWrapper.removeChild(child)
-
+   lightRowCount -= 1
+   addAndRemoveButtonHandler()
 }
 
-let intervalId;
-let toggle = false;
+
+
 
 //Controls the speed of light by adding or subtracting +/-50ms on clicking btn
 let lightSpeed = 250; //min 50 max 500
@@ -102,17 +119,18 @@ const decreaseDuration = () => {
     flash(g);
 }
 
+let intervalId;
 
 //Sets the overall time of each round the light glows
 const flash = (g) => {
     intervalId = setInterval(allLightUp, lightSpeed + g);
 }
 
+
 //Stops the interval on clicking stop button
 const stopFlash = () => {
     clearInterval(intervalId)
 }
-
 
 
 let intervals = []
@@ -216,8 +234,6 @@ const offLightsOnStop = () => {
 }
 
 
-
-
 //Display's powering up message
 const messageHide = () => {
     setTimeout(() => {
@@ -225,6 +241,7 @@ const messageHide = () => {
     }, 2000)
 }
 
+let toggle = false;
 //Handles what happen when start or stop is clicked
 const lightManager = () => {
     if (toggle) { //On clicking stop this rule works
