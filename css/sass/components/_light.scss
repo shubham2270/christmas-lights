@@ -14,6 +14,18 @@
     background-color: #fff;
 }
 
+@media only screen and (max-width: 500px) {
+    .lights_wrapper {
+        min-width: 200px;
+        // height: 50%;
+    }
+
+    .lights {
+        width: 2em;
+        height: 2em;
+    }
+}
+
 .red {
     background-color: rgb(255, 193, 184);
     transition: $speed;
@@ -22,25 +34,25 @@
 .orange {
     background-color: rgb(255, 204, 175);
     transition: $speed;
-   
+
 }
 
 .yellow {
     background-color: rgb(255, 237, 167);
     transition: $speed;
-  
+
 }
 
 .green {
     background-color: rgb(90, 124, 106);
     transition: $speed;
-   
+
 }
 
 .blue {
     background-color: rgb(126, 145, 165);
     transition: $speed;
-  
+
 }
 
 .indigo {
@@ -89,4 +101,3 @@
     background-color: rgb(153, 15, 132);
     box-shadow: rgb(163, 3, 163) 0px 0px 30px;
 }
-

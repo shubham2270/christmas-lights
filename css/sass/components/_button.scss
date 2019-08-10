@@ -6,6 +6,35 @@
     margin-top: 1.2em;
 }
 
+@media only screen and (max-width: 500px) {
+    .btn_wrapper {
+        padding: 0px;
+    }
+
+    #toggle,
+    #increase,
+    #decrease,
+    #addLight,
+    #removeLight {
+        padding: 10px 25px;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    #toggle {
+        padding: 10px 60px;
+    }
+
+    .btn_wrapper {
+        display: block;
+        border: 3px solid orange;
+        border-radius: 3px;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+}
+
 button {
     @include button;
 
@@ -24,6 +53,15 @@ button:disabled {
     margin-top: 1em;
 }
 
+@media only screen and (max-width: 500px) {
+    #reset {
+        margin: 0px;
+        padding: 10px;
+        font-size: 90%;
+        border: orange 3px solid;
+    }
+}
+
 .row-btn {
     padding: 1.5em;
     font-size: 0.9rem;
@@ -38,4 +76,3 @@ button:disabled {
     color: rgb(0, 140, 255);
     opacity: 0;
 }
-
